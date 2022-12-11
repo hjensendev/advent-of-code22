@@ -1,5 +1,3 @@
-using System.Security.AccessControl;
-
 namespace Day01;
 
 public class Elf

@@ -1,5 +1,3 @@
-
-
 namespace Day01;
 
 public class Ledger
