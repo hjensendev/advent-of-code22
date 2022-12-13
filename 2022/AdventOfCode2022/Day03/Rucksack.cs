@@ -3,12 +3,25 @@ namespace Day03;
 public class Rucksack
 {
     public int Id;
+    public int GroupId;
     public List<Item> Compartment1 { get; set; } = new List<Item>();
     public List<Item> Compartment2 { get; set; } = new List<Item>();
 
-    public Rucksack(int id, string items)
+    public List<Item> Items
+    {
+        get
+        {
+            var items = new List<Item>();
+            items.AddRange(Compartment1);
+            items.AddRange(Compartment2);
+            return items;
+        }
+    }
+
+    public Rucksack(int id, int groupId, string items)
     {
         Id = id;
+        GroupId = groupId;
         var itemCount = items.Length;
         var c1Items = items.Substring(0, itemCount / 2);
         var c2Items = items.Substring(itemCount / 2);
